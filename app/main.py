@@ -1,12 +1,15 @@
 from fastapi import FastAPI
-from .database import engine, Base
+from .database import engine
 from . import models
+from .routers import auth # Import the new router
 
-# This line commands the engine to look at our 'models' and create the tables 
-# in the database if they don't exist yet.
+# Create the database tables
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+# Connect the auth router to the main app
+app.include_router(auth.router)
 
 @app.get("/")
 def read_root():
