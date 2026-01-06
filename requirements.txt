@@ -15,3 +15,5 @@ chromadb
 pypdf
 tiktoken
 python-dotenv
+sentence-transformers
+huggingface_hub

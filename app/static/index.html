@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O/A Level AI Tutor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="login-section">
+            <h2>🔐 Access Portal</h2>
+            
+            <input type="text" id="username" placeholder="Username">
+            <input type="email" id="email" placeholder="Email (Required for Signup)">
+            <input type="password" id="password" placeholder="Password">
+            
+            <div class="button-group">
+                <button onclick="handleLogin()" style="background-color: #007bff;">Login</button>
+                <button onclick="handleSignup()" style="background-color: #28a745;">Sign Up</button>
+            </div>
+            
+            <p id="login-status"></p>
+        </div>
+
+        <div id="chat-section" style="display: none;">
+            <div class="header">
+                <h2>📚 O/A Level Tutor</h2>
+                <button onclick="logout()" class="logout-btn" style="background-color: #dc3545;">Logout</button>
+            </div>
+
+            <div class="upload-bar">
+                <input type="file" id="pdf-upload" accept=".pdf">
+                <button onclick="handleUpload()" id="upload-btn">Upload PDF</button>
+                <span id="upload-status"></span>
+            </div>
+            
+            <div id="chat-history">
+                <div class="message bot-message">
+                    Hello! Upload a Past Paper or Textbook chapter to begin.
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Ask a question about the PDF...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
